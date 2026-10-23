@@ -29,7 +29,7 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* Tombol Pilihan QUIZ Style */
+        /* Tombol Pilihan UTBK Style */
         .option-btn {
             background-color: #ffffff;
             border: 1.5px solid #e5e7eb;
@@ -91,34 +91,131 @@
 <body class="h-full flex flex-col justify-between relative bg-slate-100">
 
     <!-- MODAL INPUT NAMA PLAYER -->
-    <div id="player-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-        <div class="bg-white max-w-md w-full rounded-lg shadow-xl border border-slate-200 overflow-hidden">
-            <div class="bg-blue-800 text-white p-4 text-center">
-                <i class="fa-solid fa-graduation-cap text-3xl mb-1"></i>
-                <h2 class="text-lg font-bold tracking-wide">CBT UTBK / TKA SYSTEM</h2>
-                <p id="total-questions-info" class="text-xs text-blue-200 mt-0.5">Konfirmasi Data Peserta Ujian</p>
+    <!-- MODAL INPUT NAMA PLAYER (DESAIN SPLIT KIRI-KANAN) -->
+    <div id="player-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 z-50">
+        <div class="max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row min-h-[500px]">
+            
+            <!-- SISI KIRI: BANNER UNGU DENGAN ILUSTRASI -->
+            <div class="md:w-1/2 bg-[#6c5ce7] p-8 text-white flex flex-col justify-between relative overflow-hidden">
+                <!-- Background Decoration Shapes -->
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-black/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-wider leading-tight uppercase font-sans">
+                        SMA-YAM<br>QUIZ KU.
+                    </h2>
+                </div>
+
+                <!-- Vector Illustration Desk Setup -->
+                <div class="my-6 flex justify-center items-center">
+                    <svg class="w-64 h-48 drop-shadow-lg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Monitor -->
+                        <rect x="80" y="50" width="240" height="130" rx="10" fill="#0f172a" stroke="#00d2d3" stroke-width="4"/>
+                        <rect x="90" y="60" width="220" height="110" rx="6" fill="#1e293b"/>
+                        <path d="M110 85H290M110 105H240M110 125H270" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Monitor Stand -->
+                        <path d="M170 180L160 210H240L230 180H170Z" fill="#334155"/>
+                        <ellipse cx="200" cy="210" rx="50" ry="8" fill="#1e293b"/>
+                        <!-- Keyboard -->
+                        <rect x="120" y="220" width="160" height="30" rx="5" fill="#e2e8f0"/>
+                        <rect x="130" y="226" width="140" height="18" rx="3" fill="#cbd5e1"/>
+                        <!-- Notebook Left -->
+                        <rect x="30" y="190" width="60" height="70" rx="4" transform="rotate(-15 30 190)" fill="#ffffff"/>
+                        <line x1="45" y1="200" x2="80" y2="210" stroke="#94a3b8" stroke-width="2"/>
+                        <line x1="42" y1="210" x2="77" y2="220" stroke="#94a3b8" stroke-width="2"/>
+                        <line x1="39" y1="220" x2="74" y2="230" stroke="#94a3b8" stroke-width="2"/>
+                        <line x1="25" y1="180" x2="60" y2="250" stroke="#f59e0b" stroke-width="3"/> <!-- Pen -->
+                        <!-- Phone Right -->
+                        <rect x="310" y="180" width="35" height="65" rx="6" transform="rotate(10 310 180)" fill="#0f172a"/>
+                        <rect x="313" y="185" width="29" height="50" rx="3" transform="rotate(10 310 180)" fill="#38bdf8"/>
+                        <!-- Magnifying Glass -->
+                        <circle cx="290" cy="140" r="16" stroke="#ffffff" stroke-width="4" fill="rgba(255,255,255,0.2)"/>
+                        <line x1="301" y1="151" x2="320" y2="170" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+                <!-- Footer Features Icon -->
+                <div class="grid grid-cols-3 gap-2 text-center text-[10px] font-medium tracking-wide border-t border-white/20 pt-4">
+                    <div class="flex flex-col items-center gap-1">
+                        <i class="fa-solid fa-code text-base"></i>
+                        <span>System Computer</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <i class="fa-solid fa-brain text-base"></i>
+                        <span>Gain a new skill</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <i class="fa-solid fa-trophy text-base"></i>
+                        <span>Get high score</span>
+                    </div>
+                </div>
             </div>
 
-            <form onSubmit="startGameWithPlayer(event)" class="p-6 space-y-4">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">NAMA LENGKAP PESERTA</label>
-                    <input type="text" id="input-player-name" maxlength="30" placeholder="Masukkan Nama Lengkap..." required
-                        class="w-full bg-slate-50 border border-slate-300 rounded px-3 py-2 text-slate-800 text-sm focus:outline-none focus:border-blue-600 font-medium">
-                </div>
-                
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">KELAS / NOMOR UJIAN</label>
-                    <input type="text" id="input-player-class" maxlength="20" placeholder="Contoh: XII MIPA 1 / 001" required
-                        class="w-full bg-slate-50 border border-slate-300 rounded px-3 py-2 text-slate-800 text-sm focus:outline-none focus:border-blue-600 font-medium">
+            <!-- SISI KANAN: FORM MASUK / LOGIN -->
+            <div class="md:w-1/2 p-8 sm:p-12 flex flex-col justify-center bg-white text-slate-800">
+                <div class="mb-8">
+                    <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">Login Siswa</h3>
+                    <p class="text-xs text-slate-400 mt-1">Silakan masukkan identitas untuk memulai kuis</p>
                 </div>
 
-                <button type="submit" id="btn-start" class="w-full py-2.5 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded text-xs tracking-wide uppercase transition shadow">
-                    MULAI UJIAN SEKARANG
-                </button>
-            </form>
+                <form onSubmit="startGameWithPlayer(event)" class="space-y-6">
+                    <!-- Input Nama -->
+                    <div class="relative">
+                        <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
+                            Nama Lengkap Siswa
+                        </label>
+                        <input type="text" id="input-player-name" required placeholder="Ketik nama lengkap..."
+                            class="w-full bg-transparent border-b-2 border-slate-300 focus:border-[#6c5ce7] py-2 text-sm text-slate-800 focus:outline-none transition-colors placeholder:text-slate-300 font-medium">
+                    </div>
+
+                    <!-- Input Kelas -->
+                    <div class="relative">
+                        <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
+                            Kelas / Rombel
+                        </label>
+                        <input type="text" id="input-player-class" required placeholder="Contoh: X RPL 1"
+                            class="w-full bg-transparent border-b-2 border-slate-300 focus:border-[#6c5ce7] py-2 text-sm text-slate-800 focus:outline-none transition-colors placeholder:text-slate-300 font-medium">
+                    </div>
+
+                    <!-- Checkbox Remember -->
+                    <div class="flex items-center justify-between text-xs text-slate-500 pt-1">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" checked class="rounded border-slate-300 text-[#6c5ce7] focus:ring-[#6c5ce7]">
+                            <span>Ingat saya</span>
+                        </label>
+                        <span id="total-questions-info" class="text-slate-400 font-medium">Sistem Komputer</span>
+                    </div>
+
+                    <!-- Tombol Start Login -->
+                    <div class="pt-4">
+                        <button type="submit" id="btn-start" 
+                            class="w-36 py-3 bg-[#6c5ce7] hover:bg-[#5b4bc4] text-white font-bold rounded-full shadow-lg shadow-[#6c5ce7]/40 transition duration-200 text-sm tracking-wide flex items-center justify-center space-x-2">
+                            <span>Mulai Kuis</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Social Login Footer Fake Style -->
+                <div class="mt-10 border-t border-slate-100 pt-4">
+                    <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">Sistem Komputer Online</p>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-
     <!-- HEADER TOP BAR -->
     <header class="w-full bg-blue-900 text-white shadow-md border-b-4 border-blue-600">
         <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-2">
@@ -127,7 +224,7 @@
                     <i class="fa-solid fa-laptop-code text-lg"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-sm md:text-base tracking-wide leading-tight uppercase">CAT UTBK / TKA SIMULASI</h1>
+                    <h1 class="font-bold text-sm md:text-base tracking-wide leading-tight uppercase">SMA ALMUSLIM / TKA SIMULASI</h1>
                     <p class="text-[11px] text-blue-200">Subtes: Sistem Komputer & Informatika</p>
                 </div>
             </div>
@@ -245,7 +342,7 @@
 
     <!-- FOOTER UTBK -->
     <footer class="bg-white border-t border-slate-200 py-2.5 text-center text-xs text-slate-500 font-medium">
-        Sistem Ujian CAT UTBK &copy; 2026 - Hak Cipta Dilindungi Undang-Undang
+        Sistem Ujian CAT UTBK SMA ALMUSLIM &copy; 2026 - Hak Cipta Dilindungi Undang-Undang
     </footer>
 
     <script>
