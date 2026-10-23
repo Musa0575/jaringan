@@ -1,0 +1,24 @@
+[
+  {
+    "q": "Perkembangan teknologi digital pada abad ke-21 memberikan banyak manfaat dalam kehidupan manusia, tetapi juga menghadirkan berbagai tantangan. Berdasarkan infografis, tantangan tersebut antara lain kesenjangan digital, keamanan siber, perlindungan data pribadi, hoaks dan misinformasi, ketergantungan teknologi, otomatisasi dan AI, perubahan sosial budaya, krisis lingkungan, kesehatan mental, serta kurangnya keterampilan abad ke-21. Manakah pernyataan berikut yang tidak berkaitan dengan tantangan abad ke-21 yang ditampilkan dalam infografis tersebut?",
+    "options": [
+      "A.\tKarena algoritma membantu merencanakan langkah-langkah awal dalam pembuatan program.",
+      "B.\tKarena algoritma adalah satu-satunya cara untuk menyelesaikan masalah.",
+      "C.\tKarena algoritma membantu menentukan tampilan visual dalam program.",
+      "D.\tKarena algoritma hanya bisa digunakan oleh pemrogram berpengalaman.",
+      "D.\tKarena algoritma hanya bisa digunakan oleh pemrogram berpengalaman."
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Tampaknya, sudah menjadi rahasia umum jika industri teknologi sedang berkembang dengan pesat-pesatnya hingga hari ini. Oleh karena itu, tak mengherankan bila kemudian banyak orang ingin menekuninya. Nah, jika tertarik mempelajari web programming, maka hal pertama yang harus kamu kuasai adalah algoritma pemrograman.\n \nApa itu algoritma pemrograman?\nPengertian algoritma pemrograman adalah suatu alur yang dipergunakan dalam suatu perhitungan atau pemecahan suatu masalah secara sistematis, serta dalam kegiatan pemrograman algoritma biasanya dianggap sebagai sebuah logika untuk menentukan program yang akan dibuat.\n \nDalam definisi lain, algoritma pemrograman adalah serangkaian proses yang wajib diikuti dalam suatu perhitungan pemecahan masalah yang lain, terutama pada program komputer. Algoritma pemrograman adalah suatu pemecahan masalah dengan suatu susunan yang logis berdasarkan sistematika tertentu.\n  \nAlgoritma pemrograman adalah suatu hal yang paling dasar, oleh karenanya kamu harus bisa memahami dan mengetahui tahap awal dari pembuatan sebuah program. Untuk menyelesaikan algoritma di pemrograman dapat dilakukan menggunakan dua cara yaitu tulisan dan gambar, namun dari dua metode itu kembali lagi kepada seorang programmer, ingin menggunakan metode yang mana.\nApa definisi algoritma pemrograman menurut narasi teks?",
+    "options": [
+      "A. Metode yang hanya bisa digunakan dalam program komputer.",
+      "B. Sebuah susunan logis dalam pemecahan masalah.",
+      "C. Cara penggunaan bahasa pemrograman.",
+      "D. Serangkaian proses dalam pemecahan masalah.",
+      "E. Sebuah langkah menuju pemahaman pemrograman."
+    ],
+    "answer": 1
+  }
+]
